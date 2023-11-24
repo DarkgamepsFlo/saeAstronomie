@@ -1,0 +1,10 @@
+{
+	"fr" : {
+		"buttonPlay" : "Jouer",
+		"buttonQuit" : "Quitter"
+	},
+	"an" : {
+		"buttonPlay" : "Play",
+		"buttonQuit" : "Quit"
+	}
+}

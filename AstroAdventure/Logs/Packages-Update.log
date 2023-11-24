@@ -43,3 +43,17 @@ The following packages were updated:
   com.unity.render-pipelines.universal from version 14.0.3 to 14.0.9
   com.unity.timeline from version 1.7.1 to 1.7.6
   com.unity.visualscripting from version 1.7.8 to 1.9.1
+
+=== Fri Nov 24 08:56:45 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.ads@4.4.2
+  com.unity.analytics@3.8.1
+  com.unity.purchasing@4.9.3
+  com.unity.xr.legacyinputhelpers@2.1.10
+  com.unity.ai.navigation@1.1.5
