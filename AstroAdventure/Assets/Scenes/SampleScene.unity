@@ -1287,9 +1287,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1616947785}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1616947787}
+        m_TargetAssemblyTypeName: LocaleSelector, Assembly-CSharp
+        m_MethodName: changeFr
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1970,9 +1970,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1616947785}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1616947787}
+        m_TargetAssemblyTypeName: LocaleSelector, Assembly-CSharp
+        m_MethodName: changeEN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2074,7 +2074,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:ebd854105e5695c448c60d2232b4a7ec
     m_TableEntryReference:
-      m_KeyId: 5012279361536
+      m_KeyId: 17451045715968
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
