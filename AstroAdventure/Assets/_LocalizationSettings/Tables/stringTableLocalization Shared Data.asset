@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: stringTableLocalization Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: stringTableLocalization
+  m_TableCollectionNameGuidString: ebd854105e5695c448c60d2232b4a7ec
+  m_Entries:
+  - m_Id: 98123743232
+    m_Key: textPlayButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 195519676416
+    m_Key: textQuitButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5012279361536
+    m_Key: textEnglishLanguage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17451045715968
+    m_Key: textFrenchLanguage
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2277241965122945048
+  references:
+    version: 2
+    RefIds:
+    - rid: 2277241965122945048
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1700816018401
