@@ -567,6 +567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51409a41a533f8e478abc5d200f47224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axes: 0
+  sensitivityX: 5
+  sensitivityY: 5
+  minY: -60
+  maxY: 60
 --- !u!1 &399051323
 GameObject:
   m_ObjectHideFlags: 0
