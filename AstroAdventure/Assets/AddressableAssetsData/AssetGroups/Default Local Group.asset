@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d2743f004c4f57649b29740d971e7e36
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 594ea882c5a793440b60ff72d896021e
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c0515ade48d276c4eaec4f53973d9444, type: 2}
   m_SchemaSet:
