@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class MarsManager : MonoBehaviour
 {
@@ -27,7 +29,9 @@ public class MarsManager : MonoBehaviour
     public float rotationz = 0f;
     // Permet de définir la vitesse de la planète
     public float vitesse = 0.25f;
-    
+
+    public Interactable interactable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,20 +44,26 @@ public class MarsManager : MonoBehaviour
         positionSunz = centreSun.transform.position.z;
         // Permet de redéfinir une nouvelle taille
         centreEarth.transform.localScale = new Vector3(taillePlanete, taillePlanete, taillePlanete);
+
+        if (interactable == null)
+            interactable = GetComponent<Interactable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
+        if (!interactable.attachedToHand)
+        {
+            epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
 
-        float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
-        float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
-        float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
+            float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
+            float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
+            float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
 
-        transform.position = new Vector3(x, y, z);
+            transform.position = new Vector3(x, y, z);
 
-        transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+            transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+        }
 
     }
 }

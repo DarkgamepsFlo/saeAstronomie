@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class MercuryManager : MonoBehaviour
 {
@@ -18,8 +20,8 @@ public class MercuryManager : MonoBehaviour
     // Permet de définir la taille de la terre
     public float taillePlanete = 55.8f;
     // Permet de définir l'ellipse de la planète
-    public float longueurEllipse = 457f; // 200 + longueur en vraie (uniquement les 1 000 000)
-    public float largeurEllipse = 417f; // longueurEllipse - 40
+    public float longueurEllipse = 407f; // 200 + longueur en vraie (uniquement les 1 000 000)
+    public float largeurEllipse = 377f; // longueurEllipse - 40
     public float hauteurEllipse = 0f;
     // Permet de définir la rotation de la planète
     public float rotationx = 0f;
@@ -27,7 +29,9 @@ public class MercuryManager : MonoBehaviour
     public float rotationz = 0f;
     // Permet de définir la vitesse de la planète
     public float vitesse = 0.49f;
-    
+
+    public Interactable interactable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,20 +44,25 @@ public class MercuryManager : MonoBehaviour
         positionSunz = centreSun.transform.position.z;
         // Permet de redéfinir une nouvelle taille
         centreEarth.transform.localScale = new Vector3(taillePlanete, taillePlanete, taillePlanete);
+
+        if (interactable == null)
+            interactable = GetComponent<Interactable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
+        if (!interactable.attachedToHand)
+        {
+            epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
 
-        float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
-        float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
-        float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
+            float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
+            float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
+            float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
 
-        transform.position = new Vector3(x, y, z);
+            transform.position = new Vector3(x, y, z);
 
-        transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
-
+            transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+        }
     }
 }
