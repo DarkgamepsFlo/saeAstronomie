@@ -1445,6 +1445,10 @@ PrefabInstance:
       propertyPath: field of view
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1276306463110222610, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      propertyPath: clearanceCheckMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1276306469345280502, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       propertyPath: doNotDestroy
       value: 0

@@ -53,7 +53,7 @@ namespace Valve.VR.InteractionSystem
                 handInstance.transform.localScale = handPrefab.transform.localScale;
                 handSkeleton = handInstance.GetComponent<SteamVR_Behaviour_Skeleton>();
                 handSkeleton.origin = Player.instance.trackingOriginTransform;
-                handSkeleton.updatePose = false;
+                handSkeleton.updatePose = true;
                 handSkeleton.skeletonAction.onActiveChange += OnSkeletonActiveChange;
 
                 handRenderers = handInstance.GetComponentsInChildren<Renderer>();

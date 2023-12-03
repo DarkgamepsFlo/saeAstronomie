@@ -31,7 +31,9 @@ public class EarthManager : MonoBehaviour
     public float vitesse = 0.3f; // 0.3 = 104 000 km
 
     public Interactable interactable;
-    public bool isGrab = false;
+    public float waitTime = 3.0f;
+    public float timer = 0.0f;
+    public bool isGrab;
 
     // Start is called before the first frame update
     void Start()
@@ -52,19 +54,41 @@ public class EarthManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
+
+        float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
+        float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
+        float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
+
         if (!interactable.attachedToHand)
         {
-            epsi += vitesse * Time.deltaTime; // Ajuste la vitesse de rotation
-
-            float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
-            float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
-            float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
-
-            transform.position = new Vector3(x, y, z);
-
-            transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+            if (isGrab) 
+            {
+                timer += Time.deltaTime;
+                if (timer > waitTime)
+                {
+                    isGrab = false;
+                    timer = 0.0f;
+                }
+                    
+            }
+            else 
+            {
+                transform.position = new Vector3(x, y, z);
+                transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+            }
         }
+        else
+        {
+            isGrab = true;
+            timer = 0.0f;
+        }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/)
+            isGrab = true;
     }
 }
