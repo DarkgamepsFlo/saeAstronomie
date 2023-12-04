@@ -31,9 +31,10 @@ public class MarsManager : MonoBehaviour
     public float vitesse = 0.25f;
 
     public Interactable interactable;
+    public Rigidbody rigidBody;
     public float waitTime = 3.0f;
     public float timer = 0.0f;
-    public bool isGrab;
+    public bool isGrab = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,8 @@ public class MarsManager : MonoBehaviour
 
         if (interactable == null)
             interactable = GetComponent<Interactable>();
+        if (rigidBody == null)
+            rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -60,6 +63,7 @@ public class MarsManager : MonoBehaviour
         float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
         float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
         float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
+        
 
         if (!interactable.attachedToHand)
         {
@@ -70,6 +74,9 @@ public class MarsManager : MonoBehaviour
                 {
                     isGrab = false;
                     timer = 0.0f;
+                    rigidBody.velocity = Vector3.zero;
+                    rigidBody.angularVelocity = Vector3.zero;
+                    transform.rotation = Quaternion.Euler(rotationx * Time.deltaTime, rotationy * Time.deltaTime, rotationz * Time.deltaTime);
                 }
                     
             }
@@ -88,7 +95,11 @@ public class MarsManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/)
+        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) 
+        {
             isGrab = true;
+            if (collision.gameObject.name == "Sphere") // Sphere collider du soleil
+                transform.position = new Vector3(0, 10000, 0); // chut
+        }
     }
 }
