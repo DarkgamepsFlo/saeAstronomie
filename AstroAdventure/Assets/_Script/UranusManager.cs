@@ -32,7 +32,7 @@ public class UranusManager : MonoBehaviour
 
     public Interactable interactable;
     public Rigidbody rigidBody;
-    public float waitTime = 3.0f;
+    public float waitTime = 5.0f;
     public float timer = 0.0f;
     public bool isGrab = false;
 

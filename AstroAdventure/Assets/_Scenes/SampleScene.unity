@@ -632,6 +632,47 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!1 &399970528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+  m_PrefabInstance: {fileID: 937787407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &399970533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399970528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f511c1adaa1e94ebe7ca97bbcabd17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
+--- !u!114 &399970534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399970528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09133c4632484840b7c71ee8c4c092c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1086,7 @@ GameObject:
   - component: {fileID: 734959423}
   - component: {fileID: 734959422}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1137,6 +1178,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734959420}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &735269498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+  m_PrefabInstance: {fileID: 937787407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735269503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735269498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f511c1adaa1e94ebe7ca97bbcabd17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
+--- !u!114 &735269504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735269498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09133c4632484840b7c71ee8c4c092c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1531,10 @@ PrefabInstance:
       propertyPath: clearanceCheckMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1276306468278182708, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      propertyPath: clearanceCheckMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1276306469345280502, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       propertyPath: doNotDestroy
       value: 0
@@ -1456,7 +1542,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 399970534}
+    - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 399970533}
+    - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735269504}
+    - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735269503}
   m_SourcePrefab: {fileID: 100100000, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
 --- !u!1001 &968104389
 PrefabInstance:
@@ -2103,7 +2201,7 @@ GameObject:
   - component: {fileID: 1513798487}
   - component: {fileID: 1513798486}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,7 +2350,7 @@ GameObject:
   - component: {fileID: 1630437879}
   - component: {fileID: 1630437878}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2560,7 +2658,7 @@ GameObject:
   - component: {fileID: 1960172862}
   - component: {fileID: 1960172861}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
