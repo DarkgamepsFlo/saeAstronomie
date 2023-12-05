@@ -13,32 +13,44 @@ public class cameraManager : MonoBehaviour {
 
 	float rotationY = 0F;
 
+	float x;
+	float y;
+	float z;
+
+	float xRotate;
+	float yRotate;
+	float zRotate;
+
+
     void Start ()
 	{
+
+		x = transform.position.x;
+		y = transform.position.y;
+		z = transform.position.z;
+
+		xRotate = Camera.main.transform.localEulerAngles.x;
+		yRotate = Camera.main.transform.localEulerAngles.y;
+		zRotate = Camera.main.transform.localEulerAngles.z;
 		
 	}
 
 	void Update ()
 	{
-		if (axes == RotationAxes.MouseXAndY)
-		{
-			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
-			
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationY = Mathf.Clamp (rotationY, minY, maxY);
-			
-			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-		}
-		else if (axes == RotationAxes.MouseX)
-		{
-			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-		}
-		else
-		{
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-			rotationY = Mathf.Clamp (rotationY, minY, maxY);
-			
-			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
-		}
+
+	}
+
+	public void testModifCam(float positionSunx, float positionSunz, float positionActux, float positionActuy,  float positionActuz, GameObject centreEarth){
+		Vector3 newVector = new Vector3(positionSunx + (positionActux / 2), transform.position.y, positionSunz + (positionActuz / 2));
+		transform.position = newVector;
+		transform.LookAt(centreEarth.transform.position);
+		transform.Translate(Vector3.right * Time.deltaTime);
+	}
+
+	public void initialPlace(GameObject centreSun){
+		Vector3 newVector = new Vector3(x, y, z);
+		transform.position = newVector;
+		transform.LookAt(centreSun.transform.position);
+		transform.Translate(Vector3.right * Time.deltaTime);
 	}
 }

@@ -16,6 +16,10 @@ public class EarthManager : MonoBehaviour
     public float positionSunx;
     public float positionSuny;
     public float positionSunz;
+
+    float positionActux;
+    float positionActuy;
+    float positionActuz;
     // VARIABLE : Elles vont permettre de modifier directement les données
     // Permet de définir la taille de la terre
     public float taillePlanete = 65.5f;
@@ -31,9 +35,11 @@ public class EarthManager : MonoBehaviour
     public float vitesse = 0.3f; // 0.3 = 104 000 km
 
     public Interactable interactable;
-    public float waitTime = 3.0f;
+    public float waitTime = 5.0f;
     public float timer = 0.0f;
     public bool isGrab;
+
+    public bool isClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +47,14 @@ public class EarthManager : MonoBehaviour
         // Permet de récupérer les objets représentant la planète concerné et du soleil
         centreEarth = GameObject.Find("Earth");
         centreSun = GameObject.Find("Sun");
-        // Permet de récupérer l'ensemble des positions x, y et z du soleil
+
         positionSunx = centreSun.transform.position.x;
         positionSuny = centreSun.transform.position.y;
         positionSunz = centreSun.transform.position.z;
+        // Permet de récupérer l'ensemble des positions x, y et z du soleil
+        positionActux = centreEarth.transform.position.x;
+        positionActuy = centreEarth.transform.position.y;
+        positionActuz = centreEarth.transform.position.z;
         // Permet de redéfinir une nouvelle taille
         centreEarth.transform.localScale = new Vector3(taillePlanete, taillePlanete, taillePlanete);
 
@@ -73,8 +83,16 @@ public class EarthManager : MonoBehaviour
                 }
                     
             }
+            else if(isClicked){     
+
+                transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
+                transform.position = new Vector3(positionActux, positionActuy, positionActuz);
+            }
             else 
             {
+                positionActux = x;
+                positionActuy = y;
+                positionActuz = z;
                 transform.position = new Vector3(x, y, z);
                 transform.Rotate(new Vector3(rotationx, rotationy, rotationz) * Time.deltaTime);
             }
@@ -83,6 +101,19 @@ public class EarthManager : MonoBehaviour
         {
             isGrab = true;
             timer = 0.0f;
+        }
+    }
+
+    public void test()
+    {
+        isClicked = !isClicked;
+        Camera mainCam = Camera.main;
+        cameraManager scriptCible = mainCam.GetComponent<cameraManager>();
+        if(isClicked){
+            scriptCible.testModifCam(positionSunx, positionSunz, positionActux, positionActuy, positionActuz, centreEarth);
+        }
+        else{
+            scriptCible.initialPlace(centreSun);
         }
     }
 
