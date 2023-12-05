@@ -37,7 +37,7 @@ public class EarthManager : MonoBehaviour
     public Interactable interactable;
     public float waitTime = 5.0f;
     public float timer = 0.0f;
-    public bool isGrab;
+    public bool isGrab = false;
 
     public bool isClicked;
 
@@ -60,6 +60,8 @@ public class EarthManager : MonoBehaviour
 
         if (interactable == null)
             interactable = GetComponent<Interactable>();
+        if (rigidBody == null)
+            rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -70,6 +72,7 @@ public class EarthManager : MonoBehaviour
         float x = (positionSunx) + largeurEllipse * Mathf.Sin(epsi);
         float y = (positionSuny) + hauteurEllipse * Mathf.Sin(epsi);
         float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
+        
 
         if (!interactable.attachedToHand)
         {
@@ -80,6 +83,9 @@ public class EarthManager : MonoBehaviour
                 {
                     isGrab = false;
                     timer = 0.0f;
+                    rigidBody.velocity = Vector3.zero;
+                    rigidBody.angularVelocity = Vector3.zero;
+                    transform.rotation = Quaternion.Euler(rotationx * Time.deltaTime, rotationy * Time.deltaTime, rotationz * Time.deltaTime);
                 }
                     
             }
@@ -119,7 +125,11 @@ public class EarthManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/)
+        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) 
+        {
             isGrab = true;
+            if (collision.gameObject.name == "Sphere") // Sphere collider du soleil
+                transform.position = new Vector3(0, 10000, 0); // chut
+        }
     }
 }
