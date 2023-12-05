@@ -35,6 +35,7 @@ public class EarthManager : MonoBehaviour
     public float vitesse = 0.3f; // 0.3 = 104 000 km
 
     public Interactable interactable;
+    public Rigidbody rigidBody;
     public float waitTime = 5.0f;
     public float timer = 0.0f;
     public bool isGrab = false;
