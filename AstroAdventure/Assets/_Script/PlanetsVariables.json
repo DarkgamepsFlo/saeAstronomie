@@ -1,0 +1,90 @@
+{
+  "Mercury": {
+    "size": 55.8,
+    "ellipseLength": 407.0,
+    "ellipseWidth": 377.0,
+    "EllipseHeigth": 0.0,
+    "rotationx": 0.0,
+    "rotationy": -3.0,
+    "rotationz": 0.0,
+    "speed": 0.49,
+    "waitTime": 5.0
+  },
+  "Venus": {
+    "size": 60.9,
+    "ellipseLength": 568.0,
+    "ellipseWidth": 518.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 17.7,
+    "rotationy": -1.5,
+    "rotationz": 0.0,
+    "speed": 0.36,
+    "waitTime": 5.0
+  },
+  "Earth": {
+    "size": 65.5,
+    "ellipseLength": 799.0,
+    "ellipseWidth": 759.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 2.3,
+    "rotationy": -30.0,
+    "rotationz": 0.0,
+    "speed": 0.3,
+    "waitTime": 5.0
+  },
+  "Mars": {
+    "size": 55.65,
+    "ellipseLength": 987.0,
+    "ellipseWidth": 927.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 2.5,
+    "rotationy": -28.5,
+    "rotationz": 0.0,
+    "speed": 0.25,
+    "waitTime": 5.0
+  },
+  "Jupiter": {
+    "size": 104.8,
+    "ellipseLength": 1278.0,
+    "ellipseWidth": 1238.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 0.3,
+    "rotationy": -24.0,
+    "rotationz": 0.0,
+    "speed": 0.135,
+    "waitTime": 5.0
+  },
+  "Saturn": {
+    "size": 87.3,
+    "ellipseLength": 1576.0,
+    "ellipseWidth": 1526.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 2.6,
+    "rotationy": -42.0,
+    "rotationz": 0.0,
+    "speed": 0.1,
+    "waitTime": 5.0
+  },
+  "Uranus": {
+    "size": 75.9,
+    "ellipseLength": 1848.0,
+    "ellipseWidth": 1808.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 9.7,
+    "rotationy": -39.0,
+    "rotationz": 0.0,
+    "speed": 0.07,
+    "waitTime": 5.0
+  },
+  "Neptune": {
+    "size": 73.8,
+    "ellipseLength": 1998.0,
+    "ellipseWidth": 1968.0,
+    "ellipseHeight": 0.0,
+    "rotationx": 2.8,
+    "rotationy": -36.0,
+    "rotationz": 0.0,
+    "speed": 0.05,
+    "waitTime": 5.0
+  }
+}

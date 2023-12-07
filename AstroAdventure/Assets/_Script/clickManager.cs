@@ -12,10 +12,10 @@ public class ClickManager : MonoBehaviour {
                 Debug.Log(hit.transform.name);
                 GameObject gameObjectCible = GameObject.Find(hit.transform.name);
                 if (gameObjectCible != null){
-                    EarthManager scriptCible = gameObjectCible.GetComponent<EarthManager>();
+                    PlanetManager scriptCible = gameObjectCible.GetComponent<PlanetManager>();
 
                     if (scriptCible != null){
-                        scriptCible.test();
+                        scriptCible.onClick();
                     }
                     else{
                         Debug.LogError("Le script MyScript n'a pas été trouvé sur le GameObject.");
@@ -27,4 +27,17 @@ public class ClickManager : MonoBehaviour {
             }
         } 
 	}
+
+    public void clickPlanets(string planet) {
+        GameObject gameObjectCible = GameObject.Find(planet);
+        PlanetManager scriptCible = gameObjectCible.GetComponent<PlanetManager>();
+        if (scriptCible != null)
+        {
+            scriptCible.onClick();
+        }
+        else
+        {
+            Debug.LogError("Le script MyScript n'a pas été trouvé sur le GameObject.");
+        }
+    }
 }

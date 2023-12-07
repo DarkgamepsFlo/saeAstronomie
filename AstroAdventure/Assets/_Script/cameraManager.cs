@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class cameraManager : MonoBehaviour {
+public class CameraManager : MonoBehaviour {
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;

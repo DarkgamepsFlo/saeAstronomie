@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MercuryEllipseManager : MonoBehaviour
+public class PlanetEllipseManager : MonoBehaviour
 {
-    public int resolution = 2000; // Nombre de points sur le cercle
-    public float xRadius = 377f; // Rayon selon l'axe X
+    public int resolution = 0; // Nombre de points sur le cercle
+    public float xRadius = 0f; // Rayon selon l'axe X
     public float yRadius = 0f; // Rayon selon l'axe Y
-    public float zRadius = 407f; // Rayon selon l'axe Z
+    public float zRadius = 0f; // Rayon selon l'axe Z
 
     private LineRenderer lineRenderer;
 

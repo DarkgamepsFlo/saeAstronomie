@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00034475198, g: 0.00032588153, b: 0.00035407927, a: 1}
+  m_IndirectSpecularColor: {r: 0.0003442154, g: 0.00032587603, b: 0.000353568, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,37 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
   m_PrefabInstance: {fileID: 1104785689}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &271462195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271462194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 010603697b72c79459a47f519c60fce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 73.8
-  longueurEllipse: 1998
-  largeurEllipse: 1968
-  hauteurEllipse: 0
-  rotationx: 2.8
-  rotationy: -12
-  rotationz: 0
-  vitesse: 0.05
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &271462199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +276,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &271462206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271462194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &291253334
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +300,7 @@ GameObject:
   - component: {fileID: 291253335}
   - component: {fileID: 291253337}
   m_Layer: 0
-  m_Name: MercuryEllipseManager
+  m_Name: MercuryEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +434,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 291253334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2203bbfe981d47458887ca9f06f67d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -472,7 +453,7 @@ GameObject:
   - component: {fileID: 419166272}
   - component: {fileID: 419166274}
   m_Layer: 0
-  m_Name: MarsEllipseManager
+  m_Name: MarsEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +587,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 419166271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd561d65616f22449f52e8d2973c04d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -679,9 +660,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1221528934}
-    - targetCorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1221528940}
     - targetCorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       insertIndex: -1
@@ -692,43 +670,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1221528941}
+    - targetCorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1221528945}
   m_SourcePrefab: {fileID: 100100000, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
 --- !u!1 &466400462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
   m_PrefabInstance: {fileID: 958403560}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &466400463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466400462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa23f02cb2630bf4c870e7d5ea92e74d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 104.8
-  longueurEllipse: 1278
-  largeurEllipse: 1238
-  hauteurEllipse: 0
-  rotationx: 0.3
-  rotationy: -8
-  rotationz: 0
-  vitesse: 0.135
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &466400467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +827,35 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &466400474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466400462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &520338308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162873805401246116, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+  m_PrefabInstance: {fileID: 645960323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &520338311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520338308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45437b41a3b0ed544a2171d5609c02c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &645960323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -989,6 +968,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1162873805401246116, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 520338311}
     - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2109711598}
@@ -1072,9 +1054,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1504714892}
-    - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1504714898}
     - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
       insertIndex: -1
@@ -1085,6 +1064,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504714899}
+    - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504714903}
   m_SourcePrefab: {fileID: 100100000, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
 --- !u!1001 &768514549
 PrefabInstance:
@@ -1199,7 +1181,7 @@ GameObject:
   - component: {fileID: 872905468}
   - component: {fileID: 872905470}
   m_Layer: 0
-  m_Name: EarthEllipseManager
+  m_Name: EarthEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,7 +1315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 872905467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58f743aeb2dea548beb51365d0456ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -1352,7 +1334,7 @@ GameObject:
   - component: {fileID: 900213885}
   - component: {fileID: 900213887}
   m_Layer: 0
-  m_Name: JupiterEllipseManager
+  m_Name: JupiterEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1486,7 +1468,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 900213884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78adced9879c484d82b15739930c28a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -1559,9 +1541,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 466400463}
-    - targetCorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 466400469}
     - targetCorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
       insertIndex: -1
@@ -1572,6 +1551,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 466400470}
+    - targetCorrespondingSourceObject: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 466400474}
   m_SourcePrefab: {fileID: 100100000, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
 --- !u!1001 &1068098665
 PrefabInstance:
@@ -1668,16 +1650,16 @@ Light:
   m_GameObject: {fileID: 1078186855}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 10000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1802,9 +1784,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 271462195}
-    - targetCorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 271462201}
     - targetCorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
       insertIndex: -1
@@ -1815,6 +1794,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 271462202}
+    - targetCorrespondingSourceObject: {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 271462206}
   m_SourcePrefab: {fileID: 100100000, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
 --- !u!1001 &1124804629
 PrefabInstance:
@@ -1882,9 +1864,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1859330688}
-    - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1859330694}
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
@@ -1895,43 +1874,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1859330695}
+    - targetCorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1859330699}
   m_SourcePrefab: {fileID: 100100000, guid: b4201d402613a4464b35c805dafcca62, type: 3}
 --- !u!1 &1221528933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1288793558353234, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
   m_PrefabInstance: {fileID: 419875576}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1221528934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221528933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f990587127ce624087e1dc2183837c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 55.65
-  longueurEllipse: 987
-  largeurEllipse: 927
-  hauteurEllipse: 0
-  rotationx: 2.5
-  rotationy: -9.5
-  rotationz: 0
-  vitesse: 0.25
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &1221528938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,6 +2031,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &1221528945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221528933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1272302006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
@@ -2115,7 +2078,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 1, g: 1, b: 1, a: 0}
-  thickness: 0.002
+  thickness: 1
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -2187,9 +2150,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1856687845478954, guid: ab152f61198d54532ae39108e616ff59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1374725671}
-    - targetCorrespondingSourceObject: {fileID: 1856687845478954, guid: ab152f61198d54532ae39108e616ff59, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1374725670}
     - targetCorrespondingSourceObject: {fileID: 1856687845478954, guid: ab152f61198d54532ae39108e616ff59, type: 3}
       insertIndex: -1
@@ -2200,6 +2160,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1856687845478954, guid: ab152f61198d54532ae39108e616ff59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1374725672}
+    - targetCorrespondingSourceObject: {fileID: 1856687845478954, guid: ab152f61198d54532ae39108e616ff59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1374725677}
   m_SourcePrefab: {fileID: 100100000, guid: ab152f61198d54532ae39108e616ff59, type: 3}
 --- !u!1 &1374725663 stripped
 GameObject:
@@ -2339,37 +2302,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &1374725671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374725663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4964f3f2c44c0e84a99f3f9038cbcd63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 55.8
-  longueurEllipse: 407
-  largeurEllipse: 377
-  hauteurEllipse: 0
-  rotationx: 0
-  rotationy: -1
-  rotationz: 0
-  vitesse: 0.49
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &1374725672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,42 +2317,23 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!1 &1504714891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
-  m_PrefabInstance: {fileID: 690538156}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1504714892
+--- !u!114 &1374725677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504714891}
+  m_GameObject: {fileID: 1374725663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886206cdefd5afb49b65f254f2154ea9, type: 3}
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 60.9
-  longueurEllipse: 568
-  largeurEllipse: 518
-  hauteurEllipse: 0
-  rotationx: 17.7
-  rotationy: -0.5
-  rotationz: 0
-  vitesse: 0.36
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
+--- !u!1 &1504714891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
+  m_PrefabInstance: {fileID: 690538156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1504714896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2569,6 +2482,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &1504714903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504714891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1522478267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2651,38 +2576,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 1947319014}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1676944618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676944617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7acc6e1362b044b42a79b48b4b220374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 65.5
-  longueurEllipse: 799
-  largeurEllipse: 759
-  hauteurEllipse: 0
-  rotationx: 2.3
-  rotationy: -10
-  rotationz: 0
-  vitesse: 0.3
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
-  isClicked: 0
 --- !u!114 &1676944622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,6 +2745,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &1676944630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676944617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1709389658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,7 +2769,7 @@ GameObject:
   - component: {fileID: 1709389659}
   - component: {fileID: 1709389661}
   m_Layer: 0
-  m_Name: VenusEllipseManager
+  m_Name: VenusEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2998,7 +2903,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709389658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d79e15c754f60c4ea36bef77a3e1d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -3071,9 +2976,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2077394745}
-    - targetCorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2077394751}
     - targetCorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
       insertIndex: -1
@@ -3084,6 +2986,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2077394752}
+    - targetCorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2077394756}
   m_SourcePrefab: {fileID: 100100000, guid: c91342f6e3afc48fd958056404ead345, type: 3}
 --- !u!1 &1780022490
 GameObject:
@@ -3097,7 +3002,7 @@ GameObject:
   - component: {fileID: 1780022491}
   - component: {fileID: 1780022493}
   m_Layer: 0
-  m_Name: NeptuneEllipseManager
+  m_Name: NeptuneEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3231,7 +3136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780022490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03e71a38d01ac5459cac7f15247fa44, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -3250,7 +3155,7 @@ GameObject:
   - component: {fileID: 1826099483}
   - component: {fileID: 1826099485}
   m_Layer: 0
-  m_Name: UranusEllipseManager
+  m_Name: UranusEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3384,7 +3289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1826099482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 329971abfd910a24dbc336d6a6a8c656, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -3403,7 +3308,7 @@ GameObject:
   - component: {fileID: 1829209696}
   - component: {fileID: 1829209698}
   m_Layer: 0
-  m_Name: SaturnEllipseManager
+  m_Name: SaturnEllipse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3537,7 +3442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829209695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d89b3e118091abc4a8ba61ec71854b50, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 2000
@@ -3549,37 +3454,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
   m_PrefabInstance: {fileID: 1124804629}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1859330688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859330687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a93d79f1a0d8ea4ebb8ec3ba789dc06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 87.3
-  longueurEllipse: 1576
-  largeurEllipse: 1526
-  hauteurEllipse: 0
-  rotationx: 2.6
-  rotationy: -14
-  rotationz: 0
-  vitesse: 0.1
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &1859330692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3728,6 +3602,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &1859330699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859330687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1947319014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3786,9 +3672,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1676944618}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1676944624}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
       insertIndex: -1
@@ -3802,43 +3685,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1676944626}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1676944630}
   m_SourcePrefab: {fileID: 100100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
 --- !u!1 &2077394744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
   m_PrefabInstance: {fileID: 1730164493}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2077394745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077394744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29549a089375805418799140d9174ca0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centreSun: {fileID: 0}
-  centreEarth: {fileID: 0}
-  epsi: 0
-  positionSunx: 0
-  positionSuny: 0
-  positionSunz: 0
-  taillePlanete: 75.9
-  longueurEllipse: 1848
-  largeurEllipse: 1808
-  hauteurEllipse: 0
-  rotationx: 9.7
-  rotationy: -13
-  rotationz: 0
-  vitesse: 0.07
-  interactable: {fileID: 0}
-  rigidBody: {fileID: 0}
-  waitTime: 3
-  timer: 0
-  isGrab: 0
 --- !u!114 &2077394749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3987,6 +3842,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &2077394756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077394744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e2c3cf43faa3d408895b07a7dfc657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2109711592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
@@ -4022,7 +3889,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 1, g: 1, b: 1, a: 0}
-  thickness: 0.002
+  thickness: 1
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -4033,24 +3900,24 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1078186857}
-  - {fileID: 645960323}
   - {fileID: 1522478267}
   - {fileID: 1331042324}
+  - {fileID: 291253336}
   - {fileID: 690538156}
+  - {fileID: 1709389660}
   - {fileID: 1947319014}
+  - {fileID: 872905469}
   - {fileID: 419875576}
+  - {fileID: 419166273}
   - {fileID: 958403560}
+  - {fileID: 900213886}
   - {fileID: 1124804629}
+  - {fileID: 1829209697}
   - {fileID: 1730164493}
+  - {fileID: 1826099484}
   - {fileID: 1104785689}
+  - {fileID: 1780022492}
+  - {fileID: 645960323}
   - {fileID: 768514549}
   - {fileID: 1068098665}
   - {fileID: 850763015}
-  - {fileID: 291253336}
-  - {fileID: 1709389660}
-  - {fileID: 872905469}
-  - {fileID: 419166273}
-  - {fileID: 900213886}
-  - {fileID: 1829209697}
-  - {fileID: 1826099484}
-  - {fileID: 1780022492}
