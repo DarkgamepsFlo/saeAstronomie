@@ -656,12 +656,13 @@ MonoBehaviour:
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
   thickness: 0.002
+  range: 100
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
   reference: {fileID: 0}
---- !u!114 &399970534
+--- !u!114 &399970539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1202,12 +1203,13 @@ MonoBehaviour:
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
   thickness: 0.002
+  range: 100
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
   reference: {fileID: 0}
---- !u!114 &735269504
+--- !u!114 &735269509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1545,16 +1547,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 399970534}
+      addedObject: {fileID: 399970533}
     - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 399970533}
-    - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 735269504}
+      addedObject: {fileID: 399970539}
     - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 735269503}
+    - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735269509}
   m_SourcePrefab: {fileID: 100100000, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
 --- !u!1001 &968104389
 PrefabInstance:

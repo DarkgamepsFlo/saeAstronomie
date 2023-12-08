@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0003442154, g: 0.00032587603, b: 0.000353568, a: 1}
+  m_IndirectSpecularColor: {r: 0.00034475198, g: 0.00032588153, b: 0.00035407927, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,10 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 377
-  yRadius: 0
-  zRadius: 407
 --- !u!1 &419166271
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,10 +586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 927
-  yRadius: 0
-  zRadius: 987
 --- !u!1001 &419875576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -844,7 +836,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1162873805401246116, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
   m_PrefabInstance: {fileID: 645960323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &520338311
+--- !u!114 &520338309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -970,19 +962,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1162873805401246116, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 520338311}
+      addedObject: {fileID: 520338309}
     - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2109711598}
+      addedObject: {fileID: 2109711604}
     - targetCorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2109711597}
+      addedObject: {fileID: 2109711599}
     - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1272302012}
+      addedObject: {fileID: 1272302018}
     - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1272302011}
+      addedObject: {fileID: 1272302013}
   m_SourcePrefab: {fileID: 100100000, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
 --- !u!1001 &690538156
 PrefabInstance:
@@ -1134,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 850763015}
-  - component: {fileID: 850763014}
+  - component: {fileID: 850763016}
   m_Layer: 0
   m_Name: clickManager
   m_TagString: Untagged
@@ -1142,18 +1134,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &850763014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850763013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0c33047c2e2d343872518016e972eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &850763015
 Transform:
   m_ObjectHideFlags: 0
@@ -1169,6 +1149,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &850763016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850763013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0c33047c2e2d343872518016e972eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &872905467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,10 +1310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 759
-  yRadius: 0
-  zRadius: 799
 --- !u!1 &900213884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,10 +1459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 1238
-  yRadius: 0
-  zRadius: 1278
 --- !u!1001 &958403560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,7 +2032,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
   m_PrefabInstance: {fileID: 645960323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1272302011
+--- !u!114 &1272302013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2060,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09133c4632484840b7c71ee8c4c092c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1272302012
+--- !u!114 &1272302018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2079,6 +2063,7 @@ MonoBehaviour:
   active: 1
   color: {r: 1, g: 1, b: 1, a: 0}
   thickness: 1
+  range: 8000
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -2906,10 +2891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 518
-  yRadius: 0
-  zRadius: 568
 --- !u!1001 &1730164493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3139,10 +3120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 1968
-  yRadius: 0
-  zRadius: 1998
 --- !u!1 &1826099482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,10 +3269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 1808
-  yRadius: 0
-  zRadius: 1848
 --- !u!1 &1829209695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,10 +3418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea428eb50a905e48990e9c48fcda202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 2000
-  xRadius: 1526
-  yRadius: 0
-  zRadius: 1576
 --- !u!1 &1859330687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
@@ -3666,6 +3635,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3859,7 +3832,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1162873805401481064, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
   m_PrefabInstance: {fileID: 645960323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2109711597
+--- !u!114 &2109711599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3871,7 +3844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09133c4632484840b7c71ee8c4c092c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2109711598
+--- !u!114 &2109711604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3890,6 +3863,7 @@ MonoBehaviour:
   active: 1
   color: {r: 1, g: 1, b: 1, a: 0}
   thickness: 1
+  range: 8000
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}

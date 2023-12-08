@@ -14,6 +14,7 @@ namespace Valve.VR.Extras
         public bool active = true;
         public Color color;
         public float thickness = 0.002f;
+        public float range = 100f;
         public Color clickColor = Color.green;
         public GameObject holder;
         public GameObject pointer;
@@ -45,7 +46,7 @@ namespace Valve.VR.Extras
 
             pointer = GameObject.CreatePrimitive(PrimitiveType.Cube);
             pointer.transform.parent = holder.transform;
-            pointer.transform.localScale = new Vector3(thickness, thickness, 100f);
+            pointer.transform.localScale = new Vector3(thickness, thickness, range);
             pointer.transform.localPosition = new Vector3(0f, 0f, 50f);
             pointer.transform.localRotation = Quaternion.identity;
             BoxCollider collider = pointer.GetComponent<BoxCollider>();
@@ -97,7 +98,7 @@ namespace Valve.VR.Extras
                 this.transform.GetChild(0).gameObject.SetActive(true);
             }
 
-            float dist = 100f;
+            float dist = range;
 
             Ray raycast = new Ray(transform.position, transform.forward);
             RaycastHit hit;
@@ -127,7 +128,7 @@ namespace Valve.VR.Extras
             {
                 previousContact = null;
             }
-            if (bHit && hit.distance < 100f)
+            if (bHit && hit.distance < range)
             {
                 dist = hit.distance;
             }

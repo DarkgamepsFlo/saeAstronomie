@@ -11,7 +11,6 @@ public class PlanetManager : MonoBehaviour
     // VARIABLE : Elles vont contenir des données
     // Représente les objets de la planète concerné et du soleil
     private GameObject centreSun;
-    private GameObject centreEarth;
     // Permet de contenir la vitesse de rotation
     private float epsi;
     // Permet de contenir les positions du soleil
@@ -114,13 +113,11 @@ public class PlanetManager : MonoBehaviour
         }
     }
 
-    private void loadVariables()
-    {
+    private void loadVariables() {
         string jsonContent = File.ReadAllText("./Assets/_Script/PlanetsVariables.json");
         Planets planets = JsonConvert.DeserializeObject<Planets>(jsonContent);
         PlanetsVariables planetsVariables = null;
-        switch (gameObject.name)
-        {
+        switch (gameObject.name) {
             case "Mercury":
                 planetsVariables = planets.Mercury;
                 break;
@@ -147,8 +144,7 @@ public class PlanetManager : MonoBehaviour
                 break;
         }
 
-        if (planetsVariables != null)
-        {
+        if (planetsVariables != null) {
             taillePlanete = planetsVariables.size;
             longueurEllipse = planetsVariables.ellipseLength;
             largeurEllipse = planetsVariables.ellipseWidth;
@@ -159,30 +155,25 @@ public class PlanetManager : MonoBehaviour
             vitesse = planetsVariables.speed;
             waitTime = planetsVariables.waitTime;
         }
-        else
-        {
+        else {
             Debug.LogError($"Planète inconnue : {gameObject.name}");
         }
-
     }
 
-    public void onClick()
-    {
+    public void onClick() {
         isClicked = !isClicked;
         GameObject gameObjectCible = GameObject.Find("Player Variant");
         PlayerManager scriptCible = gameObjectCible.GetComponent<PlayerManager>();
         if(isClicked){
-            scriptCible.playerClickPlanet(positionSunx, positionSunz, positionActux, positionActuy, positionActuz, centreEarth);
+            scriptCible.playerClickPlanet(positionSunx, positionSunz, positionActux, positionActuy, positionActuz, gameObject);
         }
         else{
             scriptCible.initialPlace();
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) 
-        {
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) {
             isGrab = true;
             if (collision.gameObject.name == "Sphere") // Sphere collider du soleil
                 transform.position = new Vector3(0, 20000, 0); // chut
