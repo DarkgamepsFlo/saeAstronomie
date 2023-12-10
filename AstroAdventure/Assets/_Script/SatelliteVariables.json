@@ -1,0 +1,14 @@
+{
+  "Moon": {
+    "size": 5.0,
+    "ellipseLength": 120.0,
+    "ellipseWidth": 100.0,
+    "EllipseHeigth": 0.0,
+    "rotationx": 2.6,
+    "rotationy": -40,
+    "rotationz": 0.0,
+    "speed": 0.69,
+    "waitTime": 5.0,
+    "center": "Earth"
+  }
+}
