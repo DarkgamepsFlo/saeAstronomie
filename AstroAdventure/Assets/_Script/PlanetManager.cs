@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class PlanetManager : MonoBehaviour
 {
@@ -36,17 +37,27 @@ public class PlanetManager : MonoBehaviour
     // Permet de définir la vitesse de la planète
     private float vitesse; // 0.3 = 104 000 km
 
+    // Permet de changer le scale des planètes selon la scène
+    private float scale;
+
     private Interactable interactable;
     private Rigidbody rigidBody;
     private float waitTime;
     private float timer = 0.0f;
     private bool isGrab;
-    private bool isClicked;
+    private bool isClicked = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        if (SceneManager.GetActiveScene().name == "solarScene") {
+            scale = 0.0025f;
+        }
+        else {
+            scale = 1f;
+        }
+
         loadVariables();
+
         // Permet de récupérer les objets représentant le soleil
         centreSun = GameObject.Find("Sun");
 
@@ -77,10 +88,8 @@ public class PlanetManager : MonoBehaviour
         float z = (positionSunz) - longueurEllipse * Mathf.Cos(epsi);
         
 
-        if (!interactable.attachedToHand)
-        {
-            if (isGrab) 
-            {
+        if (!interactable.attachedToHand) {
+            if (isGrab) {
                 timer += Time.deltaTime;
                 if (timer > waitTime)
                 {
@@ -111,6 +120,12 @@ public class PlanetManager : MonoBehaviour
             isGrab = true;
             timer = 0.0f;
         }
+
+    }
+
+    public bool getIsGrab()
+    {
+        return isGrab;
     }
 
     private void loadVariables() {
@@ -145,10 +160,10 @@ public class PlanetManager : MonoBehaviour
         }
 
         if (planetsVariables != null) {
-            taillePlanete = planetsVariables.size;
-            longueurEllipse = planetsVariables.ellipseLength;
-            largeurEllipse = planetsVariables.ellipseWidth;
-            hauteurEllipse = planetsVariables.ellipseHeight;
+            taillePlanete = planetsVariables.size * scale;
+            longueurEllipse = planetsVariables.ellipseLength * scale;
+            largeurEllipse = planetsVariables.ellipseWidth * scale;
+            hauteurEllipse = planetsVariables.ellipseHeight * scale;
             rotationx = planetsVariables.rotationx;
             rotationy = planetsVariables.rotationy;
             rotationz = planetsVariables.rotationz;
@@ -164,16 +179,20 @@ public class PlanetManager : MonoBehaviour
         isClicked = !isClicked;
         GameObject gameObjectCible = GameObject.Find("Player Variant");
         PlayerManager scriptCible = gameObjectCible.GetComponent<PlayerManager>();
+        
         if(isClicked){
-            scriptCible.playerClickPlanet(positionSunx, positionSunz, positionActux, positionActuy, positionActuz, gameObject);
+            SceneManager.LoadScene(2);
+            scriptCible.setPosition(positionSunx + (positionActux / 5) * 4, 300, positionSunz + (positionActuz / 5) * 4);
         }
         else{
-            scriptCible.initialPlace();
+            SceneManager.LoadScene(1);
+            scriptCible.setPosition(500, 500, 500);
         }
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) {
+        if (collision.gameObject.name != "TeleportArea" && collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) {
             isGrab = true;
             if (collision.gameObject.name == "Sphere") // Sphere collider du soleil
                 transform.position = new Vector3(0, 20000, 0); // chut

@@ -2,49 +2,49 @@
     "Mercury": {
       "resolution": 2000,
       "xRadius": 377,
-      "yRadius": 0,
+      "yRadius": 1,
       "zRadius": 407
     },
     "Venus": {
         "resolution": 2000,
         "xRadius": 518,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 568
     },
     "Earth": {
         "resolution": 2000,
         "xRadius": 759,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 799
     },
     "Mars": {
         "resolution": 2000,
         "xRadius": 927,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 987
     },
     "Jupiter": {
         "resolution": 2000,
         "xRadius": 1238,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 1278
     },
     "Saturn": {
         "resolution": 2000,
         "xRadius": 1526,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 1576
     },
     "Uranus": {
         "resolution": 2000,
         "xRadius": 1808,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 1848
     },
     "Neptune": {
         "resolution": 2000,
         "xRadius": 1968,
-        "yRadius": 0,
+        "yRadius": 1,
         "zRadius": 1998
     }
   }

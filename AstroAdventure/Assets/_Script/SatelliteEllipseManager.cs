@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SatelliteEllipseManager : MonoBehaviour
 {
@@ -17,10 +18,23 @@ public class SatelliteEllipseManager : MonoBehaviour
     private float positionPlanetz;
     private LineRenderer lineRenderer;
 
-    void Start()
-    {
+    // Permet de changer le scale des planètes selon la scène
+    private float scale;
+
+    void Start() {
+        if (SceneManager.GetActiveScene().name == "solarScene")
+        {
+            scale = 0.006f;
+        }
+        else
+        {
+            scale = 1f;
+        }
+            
         loadVariables();
+
         lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.SetWidth(0.009f, 0.009f);
     }
 
     void Update()
@@ -45,9 +59,9 @@ public class SatelliteEllipseManager : MonoBehaviour
 
         for (int i = 0; i < resolution + 1; i++)
         {
-            float x = positionPlanetx + xRadius * Mathf.Sin(theta);
-            float y = positionPlanety + yRadius;
-            float z = positionPlanetz + zRadius * Mathf.Cos(theta);
+            float x = positionPlanetx + xRadius * Mathf.Sin(theta) * scale;
+            float y = positionPlanety + yRadius * scale;
+            float z = positionPlanetz + zRadius * Mathf.Cos(theta) * scale;
 
             lineRenderer.SetPosition(i, new Vector3(x, y, z));
 
@@ -55,8 +69,7 @@ public class SatelliteEllipseManager : MonoBehaviour
         }
     }
 
-    public void loadVariables()
-    {
+    public void loadVariables() {
         string jsonContent = File.ReadAllText("./Assets/_Script/SatelliteEllipsesVariables.json");
         SatelliteEllipses satelliteEllipses = JsonConvert.DeserializeObject<SatelliteEllipses>(jsonContent);
         SatelliteEllipsesVariables satelliteEllipsesVariables = null;

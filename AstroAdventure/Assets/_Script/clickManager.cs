@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ClickManager : MonoBehaviour {
 
+    private bool isClicked = false;
+
 	void Update () {
 
         if(Input.GetMouseButtonDown(0)){
@@ -17,13 +19,11 @@ public class ClickManager : MonoBehaviour {
                     if (scriptCible != null){
                         scriptCible.onClick();
                     }
-                    else{
+                    else
                         Debug.LogError("Le script MyScript n'a pas été trouvé sur le GameObject.");
-                    }
                 }
-                else{
+                else
                     Debug.LogError("Le GameObject avec le nom " + hit.transform.name + " n'a pas été trouvé.");
-                }
             }
         } 
 	}
@@ -31,13 +31,15 @@ public class ClickManager : MonoBehaviour {
     public void clickPlanets(string planet) {
         GameObject gameObjectCible = GameObject.Find(planet);
         PlanetManager scriptCible = gameObjectCible.GetComponent<PlanetManager>();
-        if (scriptCible != null)
-        {
+        if (scriptCible != null) {
             scriptCible.onClick();
         }
         else
-        {
             Debug.LogError("Le script MyScript n'a pas été trouvé sur le GameObject.");
-        }
+    }
+
+    public void renderObject(GameObject objet, bool visibility) {
+        LineRenderer objectRender = objet.transform.GetComponent<LineRenderer>();
+        objectRender.enabled = visibility;
     }
 }

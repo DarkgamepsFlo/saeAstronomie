@@ -847,7 +847,6 @@ MonoBehaviour:
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
   thickness: 0.002
-  range: 100
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -1508,7 +1507,6 @@ MonoBehaviour:
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
   thickness: 0.002
-  range: 100
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -1950,6 +1948,10 @@ PrefabInstance:
       propertyPath: field of view
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1162873805401707206, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1276306463110222610, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       propertyPath: clearanceCheckMask.m_Bits
       value: 4294967295
@@ -1978,6 +1980,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1162873805401464666, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 735269509}
+    - targetCorrespondingSourceObject: {fileID: 1162873805401227266, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1754051120}
   m_SourcePrefab: {fileID: 100100000, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
 --- !u!1001 &968104389
 PrefabInstance:
@@ -1993,19 +1998,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2013,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17
+      value: 317
       objectReference: {fileID: 0}
     - target: {fileID: 5795093546127117264, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2043,6 +2048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6815126943849151181, guid: 1dd66f81378d8af4b93a8f26d4a2b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 417e639b66cd3a24e9c5312be99ce3bd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2169,7 +2178,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -2991,6 +3000,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630437876}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1754051118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162873805401227266, guid: b204b4fe0df9c2149b6f582fc19c67d0, type: 3}
+  m_PrefabInstance: {fileID: 937787407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754051120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754051118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1001 &1769217744
 PrefabInstance:
   m_ObjectHideFlags: 0

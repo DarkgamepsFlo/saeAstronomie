@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class PlanetEllipseManager : MonoBehaviour
 {
@@ -12,10 +13,21 @@ public class PlanetEllipseManager : MonoBehaviour
     private float zRadius; // Rayon selon l'axe Z
 
     private LineRenderer lineRenderer;
+    
+    private float scale;
 
     void Start() {
+        if (SceneManager.GetActiveScene().name == "solarScene")
+        {
+            scale = 0.0065f;
+        }
+        else
+        {
+            scale = 1f;
+        }
         loadVariables();
         lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.SetWidth(0.01f, 0.01f);
         CreateEllipse();
     }
 
@@ -27,9 +39,9 @@ public class PlanetEllipseManager : MonoBehaviour
         float theta = 10f;
 
         for (int i = 0; i < resolution + 1; i++) {
-            float x = xRadius * Mathf.Sin(theta);
-            float y = yRadius;
-            float z = zRadius * Mathf.Cos(theta);
+            float x = xRadius * Mathf.Sin(theta) * scale;
+            float y = yRadius * scale;
+            float z = zRadius * Mathf.Cos(theta) * scale;
             
             lineRenderer.SetPosition(i, new Vector3(x, y, z));
 

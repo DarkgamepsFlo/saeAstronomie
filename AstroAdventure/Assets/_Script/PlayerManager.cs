@@ -31,4 +31,9 @@ public class PlayerManager : MonoBehaviour
         //transform.LookAt(centreSun.transform.position);
         //transform.Translate(Vector3.right * Time.deltaTime);
     }
+
+    public void setPosition(float x, float y, float z)
+    {
+        transform.position = new Vector3(x, y, z);
+    }
 }

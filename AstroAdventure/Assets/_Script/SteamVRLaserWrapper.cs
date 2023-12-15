@@ -6,6 +6,8 @@ using Valve.VR.Extras;
 
 public class SteamVRLaserWrapper : MonoBehaviour {
     private SteamVR_LaserPointer steamVrLaserPointer;
+    private bool isClicked = false;
+    private string planetClicked = "";
 
     private void Awake() {
         steamVrLaserPointer = gameObject.GetComponent<SteamVR_LaserPointer>();
@@ -24,10 +26,27 @@ public class SteamVRLaserWrapper : MonoBehaviour {
             
         }
         else {
-            GameObject gameObjectCible = GameObject.Find("clickManager");
-            ClickManager clickScript = gameObjectCible.GetComponent<ClickManager>();
-            if (clickScript != null)
-                clickScript.clickPlanets(e.target.name);
+            GameObject gameObjectCible = GameObject.Find(e.target.name);
+            PlanetManager planetManager = gameObjectCible.GetComponent<PlanetManager>();
+            Debug.Log(planetManager.getIsGrab());
+            if (gameObjectCible.tag == "Planet") {
+                if (!isClicked && !planetManager.getIsGrab()) {
+                    GameObject gameObjectClick = GameObject.Find("clickManager");
+                    ClickManager clickScript = gameObjectClick.GetComponent<ClickManager>();
+                    if (clickScript != null)
+                        clickScript.clickPlanets(e.target.name);
+                    isClicked = true;
+                    planetClicked = e.target.name;
+                }
+                else if(planetClicked != "") {
+                    GameObject gameObjectClick = GameObject.Find("clickManager");
+                    ClickManager clickScript = gameObjectClick.GetComponent<ClickManager>();
+                    if (clickScript != null)
+                        clickScript.clickPlanets(planetClicked);
+                    isClicked = false;
+                    planetClicked = "";
+                }
+            }
         }
     }
 

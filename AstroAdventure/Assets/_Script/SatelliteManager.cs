@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class SatelliteManager : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class SatelliteManager : MonoBehaviour
     // Permet de définir la vitesse de la planète
     private float vitesse; // 0.3 = 104 000 km
 
+    // Permet de changer le scale des planètes selon la scène
+    private float scale = 1;
+
     private Interactable interactable;
     private Rigidbody rigidBody;
     private float waitTime;
@@ -45,8 +49,15 @@ public class SatelliteManager : MonoBehaviour
     private bool isClicked;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        if (SceneManager.GetActiveScene().name == "solarScene")
+        {
+            scale = 0.006f;
+        }
+        else
+        {
+            scale = 1f;
+        }
         loadVariables();
         
         // Permet de récupérer l'ensemble des positions x, y et z de la lune
@@ -58,9 +69,9 @@ public class SatelliteManager : MonoBehaviour
             interactable = GetComponent<Interactable>();
         if (rigidBody == null)
             rigidBody = GetComponent<Rigidbody>();
-        
+
         // Permet de redéfinir une nouvelle taille
-        transform.localScale = new Vector3(tailleSatellite, tailleSatellite, tailleSatellite);
+        transform.localScale = new Vector3(tailleSatellite * scale, tailleSatellite * scale, tailleSatellite * scale);
     }
 
     // Update is called once per frame
@@ -128,9 +139,9 @@ public class SatelliteManager : MonoBehaviour
 
         if (satelliteVariables != null) {
             tailleSatellite = satelliteVariables.size;
-            longueurEllipse = satelliteVariables.ellipseLength;
-            largeurEllipse = satelliteVariables.ellipseWidth;
-            hauteurEllipse = satelliteVariables.ellipseHeight;
+            longueurEllipse = satelliteVariables.ellipseLength * scale;
+            largeurEllipse = satelliteVariables.ellipseWidth * scale;
+            hauteurEllipse = satelliteVariables.ellipseHeight * scale;
             rotationx = satelliteVariables.rotationx;
             rotationy = satelliteVariables.rotationy;
             rotationz = satelliteVariables.rotationz;
@@ -156,7 +167,7 @@ public class SatelliteManager : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) {
+        if (collision.gameObject.name != "TeleportArea" && collision.gameObject.name != "HandColliderLeft(Clone)" && collision.gameObject.name != "HandColliderRight(Clone)" /*&& collision.gameObject.name != "HeadCollider"*/) {
             isGrab = true;
             if (collision.gameObject.name == "Sphere") // Sphere collider du soleil
                 transform.position = new Vector3(0, 20000, 0); // chut
