@@ -38,7 +38,8 @@ public class PlanetManager : MonoBehaviour
     private float vitesse; // 0.3 = 104 000 km
 
     // Permet de changer le scale des planètes selon la scène
-    private float scale;
+    private float scalePlanet;
+    private float scaleEllipse;
 
     private Interactable interactable;
     private Rigidbody rigidBody;
@@ -50,10 +51,12 @@ public class PlanetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         if (SceneManager.GetActiveScene().name == "solarScene") {
-            scale = 0.0025f;
+            scalePlanet = 0.0025f;
+            scaleEllipse = 0.0065f;
         }
         else {
-            scale = 1f;
+            scalePlanet = 1f;
+            scaleEllipse = 1f;
         }
 
         loadVariables();
@@ -160,10 +163,10 @@ public class PlanetManager : MonoBehaviour
         }
 
         if (planetsVariables != null) {
-            taillePlanete = planetsVariables.size * scale;
-            longueurEllipse = planetsVariables.ellipseLength * scale;
-            largeurEllipse = planetsVariables.ellipseWidth * scale;
-            hauteurEllipse = planetsVariables.ellipseHeight * scale;
+            taillePlanete = planetsVariables.size * scalePlanet;
+            longueurEllipse = planetsVariables.ellipseLength * scaleEllipse;
+            largeurEllipse = planetsVariables.ellipseWidth * scaleEllipse;
+            hauteurEllipse = planetsVariables.ellipseHeight * scaleEllipse;
             rotationx = planetsVariables.rotationx;
             rotationy = planetsVariables.rotationy;
             rotationz = planetsVariables.rotationz;
